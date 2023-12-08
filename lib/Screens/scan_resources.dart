@@ -1,11 +1,11 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_document_scanner/flutter_document_scanner.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:textfield_datepicker/textfield_datepicker.dart';
 import 'package:intl/intl.dart';
-import 'package:camera/camera.dart';
+
 import 'package:varify_me/main.dart';
 
 class ScanResources extends StatefulWidget {
@@ -25,6 +25,9 @@ class _ScanResourcesState extends State<ScanResources> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+      ),
       bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
           type: BottomNavigationBarType.fixed,
@@ -55,6 +58,24 @@ class _ScanResourcesState extends State<ScanResources> {
         Container(
           color: Colors.amber,
         ),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          Icon(
+            Icons.arrow_back,
+            size: 30,
+          ),
+          Text(
+            "Scan Resources",
+            style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+          ),
+          CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.amber.shade300,
+            child: Icon(
+              Icons.info_outline,
+              //size: 10.sp,
+            ),
+          )
+        ]),
         Positioned(
           bottom: 0,
           child: Container(
@@ -198,6 +219,22 @@ class _ScanResourcesState extends State<ScanResources> {
                     ],
                   ),
                 ]),
+          ),
+        ),
+        Positioned(
+          top: 100,
+          left: 40,
+          right: 40,
+          child: Container(
+            child: Image.asset(
+              "lib/images/scanbig.png",
+              height: 10.sp,
+            ),
+            height: 250.h,
+            width: 250.w,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(width: 4)),
           ),
         )
       ]),

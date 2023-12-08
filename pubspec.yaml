@@ -41,8 +41,8 @@ dependencies:
   percent_indicator: ^4.2.3
   dotted_border: ^2.1.0
   textfield_datepicker: ^0.2.0
-  flutter_document_scanner: ^1.1.0
-  # camera: ^0.10.5+5
+  
+  
   
   
 

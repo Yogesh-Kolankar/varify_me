@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:varify_me/Screens/upload_two.dart';
 
 class UploadCertificate extends StatefulWidget {
   const UploadCertificate({super.key});
@@ -309,26 +310,32 @@ class _UploadCertificateState extends State<UploadCertificate> {
           SizedBox(
             height: 40.h,
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.r),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => UploadTwo()));
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.r),
 
-              // BoxShadow(
-              //   color: Colors.grey.shade900,
-              //   offset: Offset(1.0, 6.0), //(x,y)
-              //   blurRadius: 16.0,
-              // ),
+                // BoxShadow(
+                //   color: Colors.grey.shade900,
+                //   offset: Offset(1.0, 6.0), //(x,y)
+                //   blurRadius: 16.0,
+                // ),
 
-              //borderRadius: BorderRadius.circular(20),
-              color: Colors.amber,
+                //borderRadius: BorderRadius.circular(20),
+                color: Colors.amber,
+              ),
+              width: 320.w,
+              height: 50.h,
+              child: Center(
+                  child: Text(
+                "Upload Certificate",
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+              )),
             ),
-            width: 320.w,
-            height: 50.h,
-            child: Center(
-                child: Text(
-              "Upload Certificate",
-              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
-            )),
           ),
         ]));
   }

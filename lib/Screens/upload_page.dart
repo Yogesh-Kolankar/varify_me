@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:varify_me/Screens/scan_resources.dart';
 import 'package:varify_me/Screens/upload_certificate.dart';
 import 'package:varify_me/Screens/upload_resources.dart';
 import 'package:varify_me/Screens/upload_two.dart';
@@ -154,7 +155,7 @@ class _UploadPageState extends State<UploadPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const UploadTwo(),
+                        builder: (context) => const ScanResources(),
                       ));
                 },
                 child: Stack(

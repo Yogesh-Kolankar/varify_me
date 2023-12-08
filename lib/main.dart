@@ -1,7 +1,8 @@
 import "package:flutter/material.dart";
-import 'package:flutter_document_scanner/flutter_document_scanner.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:varify_me/Screens/scan_resources.dart';
+import 'package:varify_me/Screens/welcome.dart';
 import 'package:varify_me/document.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         title: "Verify Me",
         theme: ThemeData(primarySwatch: Colors.grey),
         debugShowCheckedModeBanner: false,
-        home: ScanResources(),
+        home: WelcomeScreen(),
       ), //ProfilePage()) //WelcomeScreen()) //SignUp()) //WelcomeScreen()) //Login())
       //MobileVerification()) //ChangePassword()) //ForgetPassword()) SignUp()) Login()) //WelcomeScreen()),
     );

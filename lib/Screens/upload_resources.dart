@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:textfield_datepicker/textfield_datepicker.dart';
 import 'package:intl/intl.dart';
+import 'package:varify_me/document.dart';
 
 class UploadResources extends StatefulWidget {
   const UploadResources({super.key});
@@ -19,32 +20,32 @@ class _UploadResourcesState extends State<UploadResources> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       bottomNavigationBar: BottomNavigationBar(
-          elevation: 0,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  "lib/images/bottamgarage.png",
-                  height: 30.h,
-                  scale: 1,
-                ),
-                label: ""),
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  "lib/images/bottamsim.png",
-                  height: 30.h,
-                  scale: 1,
-                ),
-                label: ""),
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  "lib/images/bottamperson.png",
-                  height: 20.h,
-                  scale: 1,
-                ),
-                label: "")
-          ]),
+        bottomNavigationBar: BottomNavigationBar(
+            elevation: 0,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    "lib/images/bottamgarage.png",
+                    height: 30.h,
+                    scale: 1,
+                  ),
+                  label: ""),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    "lib/images/bottamsim.png",
+                    height: 30.h,
+                    scale: 1,
+                  ),
+                  label: ""),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    "lib/images/bottamperson.png",
+                    height: 20.h,
+                    scale: 1,
+                  ),
+                  label: "")
+            ]),
         body: Column(children: [
           Stack(children: [
             Container(
@@ -252,30 +253,37 @@ class _UploadResourcesState extends State<UploadResources> {
           SizedBox(
             height: 10.h,
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.r),
-              color: Colors.amber,
-            ),
-            width: 320.sp,
-            height: 140.sp,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  //color: Colors.amber,
-                  child: Image.asset(
-                    'lib/images/scan1.png',
-                    height: 60.sp,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const DocumentScreen(),
+              ));
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.r),
+                color: Colors.amber,
+              ),
+              width: 320.sp,
+              height: 130.sp,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    //color: Colors.amber,
+                    child: Image.asset(
+                      'lib/images/scan1.png',
+                      height: 60.sp,
+                    ),
                   ),
-                ),
-                SizedBox(height: 10.h),
-                Text(
-                  "Scan Resources",
-                  style:
-                      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
-                )
-              ],
+                  SizedBox(height: 10.h),
+                  Text(
+                    "Scan Resources",
+                    style:
+                        TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
             ),
           ),
         ]));
